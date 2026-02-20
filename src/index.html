@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmBlog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <nav>
+                <div class="nav-left">
+                    <a href="#" class="logo"><span>Film</span>Blog</a>
+
+                    <ul class="nav-menu">
+                        <li><a href="diziler.html">Diziler</a></li>
+                        <li><a href="filmler.html">Filmler</a></li>
+                        <li><a href="#">Popüler</a></li>
+                        <li class="dropdown">
+                            <input type="checkbox" id="menu-ac-kapa">
+
+                            <label for="menu-ac-kapa" class="menu-btn">
+                                Kategoriler ▼
+                            </label>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Aksiyon</a></li>
+                                <li><a href="#">Aile</a></li>
+                                <li><a href="#">Animasyon</a></li>
+                                <li><a href="#">Bilim Kurgu</a></li>
+                                <li><a href="#">Çizgi Film</a></li>
+                                <li><a href="#">Fantastik</a></li>
+                                <li><a href="#">Gizem</a></li>
+                                <li><a href="#">Korku</a></li>
+                                <li><a href="#">Komedi</a></li>
+                                <li><a href="#">Macera</a></li>
+                                <li><a href="#">Polisiye</a></li>
+                                <li><a href="#">Romantik</a></li>
+                                <li><a href="#">Western</a></li>
+                                <li><a href="#">Dram</a></li>
+                                <li><a href="#">Gerilim</a></li>
+                                <li><a href="#">Yerli</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-right">
+                    <form action="#" class="search-form">
+                        <input type="text" placeholder="Film veya Dizi Ara...">
+                        <button type="submit">Ara</button>
+                    </form> 
+
+                    <div class="authButtons">
+                        <a href="#giris-popup" class="btn-giris">Giriş Yap</a>
+                        <a href="#kayit-popup" class="btn-kayit">Kayıt Ol</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="content">
+
+            <section class="populer-vitrin">
+                <h2 class="vitrin-baslik">Öne Çıkan Filmler</h2>
+
+                <div class="populer-grid">
+                    
+                    <a href="film-detay.html" class="mini-card">
+                        <img src="resimler/BladeRunner2049.png" alt="BladeRunner2049">
+                        <div class="mini-overlay">
+                            <div class="bilgi-sol">
+                                <h3 class="film-adi">Blade Runner 2049</h3>
+                                <span class="film-yili">2017</span>
+                            </div>
+                            <div class="bilgi-sag">
+                                <span class="film-puani">8.0</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="film-detay.html" class="mini-card">
+                        <img src="resimler/Inception.jpg" alt="Inception">
+                        <div class="mini-overlay">
+                            <div class="bilgi-sol">
+                                <h3 class="film-adi">Inception</h3>
+                                <span class="film-yili">2010</span>
+                            </div>
+                            <div class="bilgi-sag">
+                                <span class="film-puani">8.8</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="film-detay.html" class="mini-card">
+                        <img src="resimler/Interstellar.jpg" alt="Interstellar">
+                        <div class="mini-overlay">
+                            <div class="bilgi-sol">
+                                <h3 class="film-adi">Interstellar</h3>
+                                <span class="film-yili">2014</span>
+                            </div>
+                            <div class="bilgi-sag">
+                                <span class="film-puani">8.7</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="film-detay.html" class="mini-card">
+                        <img src="resimler/Tenet.jpg" alt="Tenet">
+                        <div class="mini-overlay">
+                            <div class="bilgi-sol">
+                                <h3 class="film-adi">Tenet</h3>
+                                <span class="film-yili">2020</span>
+                            </div>
+                            <div class="bilgi-sag">
+                                <span class="film-puani">7.3</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="film-detay.html" class="mini-card">
+                        <img src="resimler/Trumanshow.jpg" alt="Film">
+                        <div class="mini-overlay">
+                            <div class="bilgi-sol">
+                                <h3 class="film-adi">Truman Show</h3>
+                                <span class="film-yili">1998</span>
+                            </div>
+                            <div class="bilgi-sag">
+                                <span class="film-puani">8.2</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+            
+            <div class="icerik-ayirici">
+
+                <div class="film-akisi">
+                    <div class="akis-baslik-kapsayici">
+                        <h2 class="baslik">Son Eklenenler</h2>
+                        <div class="akis-filtre">
+                            <span class="aktif">Tümü</span>
+                            <span><a href="filmler.html">Filmler</a></span>
+                            <span><a href="diziler.html">Diziler</a></span>
+                        </div>
+                    </div>
+
+                    <div class="film-grid">
+
+                         <a href="film-detay.html" class="poster-card">
+                            <img src="resimler/Loki.png" alt="Loki">
+
+                            <span class="tur-etiketi dizi">DİZİ</span>
+
+                            <div class="poster-overlay">
+                                <div class="poster-bilgi">
+                                    <h3 class="poster-baslik">Loki</h3>
+                                    <div class="poster-meta">
+                                        <span class="yil">2021</span>
+                                        <span class="dot">•</span>
+                                        <span class="detay">3. Sezon</span>
+                                    </div>
+                                </div>
+                                <div class="poster-puan">8.2</div>
+                            </div>
+                        </a>
+
+                        <a href="film-detay.html" class="poster-card">
+                            <img src="resimler/Oppenheimer.jpg" alt="Oppenheimer">
+
+                            <span class="tur-etiketi film">FİLM</span>
+
+                            <div class="poster-overlay">
+                                <div class="poster-bilgi">
+                                    <h3 class="poster-baslik">Oppenheimer</h3>
+                                    <div class="poster-meta">
+                                        <span class="yil">2023</span>
+                                    </div>
+                                </div>
+                                <div class="poster-puan">8.4</div>
+                            </div>
+                        </a>
+
+                        <a href="film-detay.html" class="poster-card">
+                            <img src="resimler/theBoys.jpg" alt="The Boys">
+
+                            <span class="tur-etiketi dizi">DİZİ</span>
+
+                            <div class="poster-overlay">
+                                <div class="poster-bilgi">
+                                    <h3 class="poster-baslik">The Boys</h3>
+                                    <div class="poster-meta">
+                                        <span class="yil">2019</span>
+                                        <span class="dot">•</span>
+                                        <span class="detay">3. Sezon</span>
+                                    </div>
+                                </div>
+                                <div class="poster-puan">8.7</div>
+                            </div>
+                        </a>
+
+                        <a href="film-detay.html" class="poster-card">
+                            <img src="resimler/matrix.jpg" alt="Matrix">
+
+                            <span class="tur-etiketi film">FİLM</span>
+
+                            <div class="poster-overlay">
+                                <div class="poster-bilgi">
+                                    <h3 class="poster-baslik">Matrix</h3>
+                                    <div class="poster-meta">
+                                        <span class="yil">1999</span>
+                                    </div>
+                                </div>
+                                <div class="poster-puan">8.7</div>
+                            </div>
+                        </a>
+
+                        <a href="film-detay.html" class="poster-card">
+                            <img src="resimler/strangerThings.jpg" alt="Stranger Things">
+
+                            <span class="tur-etiketi dizi">DİZİ</span>
+
+                            <div class="poster-overlay">
+                                <div class="poster-bilgi">
+                                    <h3 class="poster-baslik">Stranger Things</h3>
+                                    <div class="poster-meta">
+                                        <span class="yil">2016</span>
+                                        <span class="dot">•</span>
+                                        <span class="detay">4. Sezon</span>
+                                    </div>
+                                </div>
+                                <div class="poster-puan">8.7</div>
+                            </div>
+                        </a>
+
+                        <a href="film-detay.html" class="poster-card">
+                            <img src="resimler/Avengersendgame.jpg" alt="Avengers Endgame">
+
+                            <span class="tur-etiketi film">FİLM</span>
+
+                            <div class="poster-overlay">
+                                <div class="poster-bilgi">
+                                    <h3 class="poster-baslik">Avengers Endgame</h3>
+                                    <div class="poster-meta">
+                                        <span class="yil">2019</span>
+                                    </div>
+                                </div>
+                                <div class="poster-puan">8.4</div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="pagination">
+                         <a href="#" class="page-btn prev">&laquo; Önceki</a>
+
+                         <a href="#" class="page-num aktif">1</a>
+                         <a href="#" class="page-num">2</a>
+                         <a href="#" class="page-num">3</a>
+                         <span class="dots">...</span>
+                         <a href="#" class="page-num">8</a>
+
+                         <a href="#" class="page-btn next">Sonraki &raquo;</a>
+                    </div>
+
+                </div>
+
+                <aside class="sidebar">     
+                    <div class="widget">
+                        <h3>Popüler Etiketler</h3>
+                        <div class="etiket-bulutu">
+                            <a href="#">Aksiyon</a>
+                            <a href="#">Bilim Kurgu</a>
+                            <a href="#">Oscar Ödüllü</a>
+                            <a href="#">IMDb 8+</a>
+                            <a href="#">Netflix</a>
+                            <a href="#">Nolan</a>
+                            <a href="#">Marvel</a>
+                            <a href="#">2024</a>
+                            <a href="#">Korku</a>
+                            <a href="#">Klasikler</a>
+                        </div>
+                    </div>
+                
+                    <div class="widget">
+                        <h3>Yakında Sinemalarda</h3>
+                        <ul class="gelecek-listesi">  
+                            <li class="gelecek-item">
+                                <div class="gelecek-poster">
+                                    <img src="resimler/Inception.jpg" alt="Inception 2">
+                                </div>
+                                <div class="gelecek-bilgi">
+                                    <span class="gelecek-adi">Inception: Dream</span>
+                                    <span class="gelecek-tarih"><i class="fa-solid fa-calendar"></i> 20 Kasım 2025</span>
+                                </div>
+                            </li>
+                                  
+                            <li class="gelecek-item">
+                                <div class="gelecek-poster">
+                                    <img src="resimler/matrix.jpg" alt="Matrix 5"> 
+                                </div>
+                                <div class="gelecek-bilgi">
+                                    <span class="gelecek-adi">Matrix 5: Reborn</span>
+                                    <span class="gelecek-tarih"><i class="fa-solid fa-calendar"></i> 15 Mayıs 2026</span>
+                                </div>
+                            </li>
+
+                            <li class="gelecek-item">
+                                <div class="gelecek-poster">
+                                    <img src="resimler/avengersDoomsday.jpg" alt="Avengers: Doomsday">
+                                </div>
+                                <div class="gelecek-bilgi">
+                                    <span class="gelecek-adi">Avengers: Doomsday</span>
+                                    <span class="gelecek-tarih"><i class="fa-solid fa-calendar"></i> 18 Aralık 2026</span>
+                                </div>
+                            </li>
+                        
+                            <li class="gelecek-item">
+                                <div class="gelecek-poster">
+                                    <img src="resimler/theBoys.jpg" alt="The Boys Movie">
+                                </div>
+                                <div class="gelecek-bilgi">
+                                    <span class="gelecek-adi">The Boys: Movie</span>
+                                    <span class="gelecek-tarih"><i class="fa-solid fa-calendar"></i> Yakında</span>
+                                </div>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                
+                </aside>
+
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                
+                <div class="footer-col">
+                    <h3 class="footer-logo">Film<span>Blog</span></h3>
+                    <p>En güncel film ve dizi incelemeleri, fragmanlar ve sinema dünyasından haberler.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Kurumsal</h4>
+                    <ul>
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">İletişim</a></li>
+                        <li><a href="#">Kullanım Koşulları</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Takip Et</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter / X</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 FilmBlog. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="giris-popup" class="popup-kapsayici">
+        <div class="popup-kutusu">
+            <a href="#!" class="kapat-tusu">X</a> <!-- href# yerine href!# yaptık çünkü sayfa başına atmasın diye-->
+
+            <h2>Giriş Yap</h2>
+            <form>
+                <input type="text" placeholder="Kullanıcı Adı">
+                <input type="password" placeholder="Şifre">
+                <button type="submit">Giriş</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="kayit-popup" class="popup-kapsayici">
+        <div class="popup-kutusu">
+            <a href="#!" class="kapat-tusu">X</a>
+
+            <h2>Kayıt Ol</h2>
+            <form>
+                <input type="text" placeholder="E-posta">
+                <input type="text" placeholder="Kullanıcı Adı">
+                <input type="password" placeholder="Şifre">
+                <input type="password" placeholder="Şifre Tekrar">
+                <button type="submit">Kayıt Ol</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

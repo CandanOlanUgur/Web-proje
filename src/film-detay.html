@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Detay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <nav>
+                <div class="nav-left">
+                    <a href="index.html" class="logo"><span>Film</span>Blog</a>
+
+                    <ul class="nav-menu">
+                        <li><a href="diziler.html">Diziler</a></li>
+                        <li><a href="filmler.html">Filmler</a></li>
+                        <li><a href="#">Popüler</a></li>
+                        <li class="dropdown">
+                            <input type="checkbox" id="menu-ac-kapa">
+
+                            <label for="menu-ac-kapa" class="menu-btn">
+                                Kategoriler ▼
+                            </label>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Aksiyon</a></li>
+                                <li><a href="#">Aile</a></li>
+                                <li><a href="#">Animasyon</a></li>
+                                <li><a href="#">Bilim Kurgu</a></li>
+                                <li><a href="#">Çizgi Film</a></li>
+                                <li><a href="#">Fantastik</a></li>
+                                <li><a href="#">Gizem</a></li>
+                                <li><a href="#">Korku</a></li>
+                                <li><a href="#">Komedi</a></li>
+                                <li><a href="#">Macera</a></li>
+                                <li><a href="#">Polisiye</a></li>
+                                <li><a href="#">Romantik</a></li>
+                                <li><a href="#">Western</a></li>
+                                <li><a href="#">Dram</a></li>
+                                <li><a href="#">Gerilim</a></li>
+                                <li><a href="#">Yerli</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-right">
+                    <form action="#" class="search-form">
+                        <input type="text" placeholder="Film veya Dizi Ara...">
+                        <button type="submit">Ara</button>
+                    </form> 
+
+                    <div class="authButtons">
+                        <a href="#giris-popup" class="btn-giris">Giriş Yap</a>
+                        <a href="#kayit-popup" class="btn-kayit">Kayıt Ol</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="film-backdrop" style="background-image: url(resimler/yatayOppenheimer.jpg);">
+        <div class="backdrop-overlay"></div>
+    </div>
+    
+    <div class="container detay-container">
+
+        <div class="film-ust-bilgi">
+
+            <div class="detay-poster-alani">
+                <img src="resimler/Oppenheimer.jpg" alt="Oppenheimer Poster" class="ana-poster">
+            </div>
+
+            <div class="detay-metin-alani">
+                <h1 class="film-baslik">Oppenheimer <span class="yil-etiketi">(2023)</span></h1>
+
+                <div class="film-meta-satiri">
+                    <span class="yas-siniri">16+</span>
+                    <span class="sure">3s 0dk</span>
+                    <span class="turler">Biyografi, Dram, Tarih</span>
+                </div>
+
+                <div class="puan-kutusu">
+                    <div class="puan-item">
+                        <span class="sembol sari">★</span><span class="puan-degeri">8.4</span>
+                        <span class="puan-kaynak">IMDb</span>
+                    </div>
+                    <div class="puan-item">
+                        <span class="sembol kirmizi">♥</span><span class="puan-degeri">%94</span>
+                        <span class="puan-kaynak">Kullanıcı</span>
+                    </div>
+                </div>
+                
+                <div class="film-ozeti">
+                    <h3>Özet</h3>
+                    <p>Amerikalı fizikçi Julius Robert Oppenheimer'ın hayatına odaklanılan filmde, İkinci Dünya Savaşı sırasında atom bombasının geliştirilme süreci anlatılıyor.</p>
+                </div>
+
+                <div class="film-ekibi">
+                    <div class="yonetmen">
+                        <strong>Yönetmen:</strong> Christopher Nolan
+                    </div>
+                    <div class="oyuncular">
+                        <strong>Oyuncular:</strong> Cillian Murphy, Emily Blunt, Matt Damon
+                    </div>
+                </div>
+
+                <div class="aksiyon-butonlari">
+                    <a href="#" class="btn-izle">▶ Fragman İzle</a><a href="#" class="btn-liste">+ Listeme Ekle</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="oyuncu-kadrosu">
+            <h2 class="bolum-basligi">Oyuncu Kadrosu</h2>
+            <div class="oyuncu-grid">
+                <div class="oyuncu-kart">
+                    <div class="oyuncu-resim-cerceve">
+                        <img src="resimler/CillianMurphy.png" alt="Cillian Murphy">
+                    </div>
+                    <h4>Cillian Murphy</h4>
+                </div>
+                <div class="oyuncu-kart">
+                    <div class="oyuncu-resim-cerceve">
+                        <img src="resimler/florencePugh.jpg" alt="Florence Pugh">
+                    </div>
+                    <h4>Florence Pugh</h4>
+                </div>
+                <div class="oyuncu-kart">
+                    <div class="oyuncu-resim-cerceve">
+                        <img src="resimler/mattDamon.jpg" alt="Matt Damon">
+                    </div>
+                    <h4>Matt Damon</h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="yorumlar-bolumu">
+            <h2 class="bolum-basligi">Yorumlar (3)</h2>
+
+            <div class="yorum-yap-kutusu">
+                <div class="yorum-profil-img">?</div>
+                <div class="yorum-form-wrapper">
+                    <textarea placeholder="Yorumunu buraya yaz..."></textarea>
+                    <div class="yorum-alt-satir">
+                        <button>Yorumu Gönder</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="yorum-listesi">
+                <div class="yorum-item">
+                    <div class="yorum-baslik">
+                        <span class="kullanici-adi">Ahmet Y.</span>
+                        <span class="yorum-tarih">2 gün önce</span>
+                    </div>
+                    <p class="yorum-icerik">Mükemmel bir filmdi.</p>
+                </div>
+                <div class="yorum-item">
+                    <div class="yorum-baslik">
+                        <span class="kullanici-adi">Osman H.</span>
+                        <span class="yorum-tarih">5 gün önce</span>
+                    </div>
+                    <p class="yorum-icerik">Görsel bir şölen ve muazzam bir ses tasarımı. Nolan yine yapmış yapacağını.</p>
+                </div>
+                <div class="yorum-item">
+                    <div class="yorum-baslik">
+                        <span class="kullanici-adi">Sıla C.</span>
+                        <span class="yorum-tarih">8 gün önce</span>
+                    </div>
+                    <p class="yorum-icerik">Pratik efektlerin kullanımı ve kurgu hızı filmi bir an bile yavaşlatmıyor.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                
+                <div class="footer-col">
+                    <h3 class="footer-logo">Film<span>Blog</span></h3>
+                    <p>En güncel film ve dizi incelemeleri, fragmanlar ve sinema dünyasından haberler.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Kurumsal</h4>
+                    <ul>
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">İletişim</a></li>
+                        <li><a href="#">Kullanım Koşulları</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Takip Et</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter / X</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 FilmBlog. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="giris-popup" class="popup-kapsayici">
+        <div class="popup-kutusu">
+            <a href="#!" class="kapat-tusu">X</a> <!-- href# yerine href!# yaptık çünkü sayfa başına atmasın diye-->
+
+            <h2>Giriş Yap</h2>
+            <form>
+                <input type="text" placeholder="Kullanıcı Adı">
+                <input type="password" placeholder="Şifre">
+                <button type="submit">Giriş</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="kayit-popup" class="popup-kapsayici">
+        <div class="popup-kutusu">
+            <a href="#!" class="kapat-tusu">X</a>
+
+            <h2>Kayıt Ol</h2>
+            <form>
+                <input type="text" placeholder="E-posta">
+                <input type="text" placeholder="Kullanıcı Adı">
+                <input type="password" placeholder="Şifre">
+                <input type="password" placeholder="Şifre Tekrar">
+                <button type="submit">Kayıt Ol</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
