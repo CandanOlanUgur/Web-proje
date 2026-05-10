@@ -36,4 +36,22 @@ function populerFilmleriGetir($sayfa = 1) {
     // 6. Gelen JSON formatını diziye çevir
     return json_decode($cevap, true);
 }
+
+function filmDetayGetir($id) {
+    global $tmdb_api_key;
+    // append_to_response=credits sayesinde tek istekte oyuncuları da alıyoruz
+    $url = "https://api.themoviedb.org/3/movie/" . $id . "?api_key=" . $tmdb_api_key . "&language=tr-TR&append_to_response=credits";
+    
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $cevap = curl_exec($ch);
+    curl_close($ch);
+    
+    return json_decode($cevap, true);
+}
+
+
+
 ?>
