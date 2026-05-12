@@ -10,6 +10,14 @@
     // 2. API'den film detaylarını çek
     $film = filmDetayGetir($movie_id);
 
+    // Oturum açan kullanıcının yetkisini bul
+    $aktif_kullanici_rolu = 'user';
+    if(isset($_SESSION['kullanici_id'])){
+    $rolSorgu = $db->prepare("SELECT rol FROM users WHERE id = ?");
+    $rolSorgu->execute([$_SESSION['kullanici_id']]);
+    $aktif_kullanici_rolu = $rolSorgu->fetchColumn();
+    }
+
     // 3. Veritabanından yorumları çek (Admin yorumları en üstte olacak şekilde)
     $yorumSorgu = $db->prepare("SELECT c.*, u.username, u.rol FROM comments c 
                                 JOIN users u ON c.user_id = u.id 
@@ -33,6 +41,8 @@
             $favoride_mi = true;
         }
     }
+
+
 
     include 'header.php';
 ?>
@@ -127,16 +137,35 @@
         <h2 class="bolum-basligi">Kullanıcı Yorumları (<?php echo count($yorumlar); ?>)</h2>
         <div class="yorum-listesi">
             <?php foreach($yorumlar as $y): ?>
-                <div class="yorum-item" style="<?php echo ($y['rol'] == 'admin') ? 'border-left: 4px solid #e50914;' : ''; ?>">
-                    <div class="yorum-baslik">
+            <div class="yorum-item" style="<?php echo ($y['rol'] == 'admin') ? 'border-left: 4px solid #e50914;' : ''; ?>">
+                
+                <div class="yorum-baslik">
+                    <span class="kullanici-adi">
+                        <?php echo htmlspecialchars($y['username']); ?> 
+                        <?php if($y['rol'] == 'admin' || $y['rol'] == 'admin') echo "<small style='color:#e50914;'>(Yönetici)</small>"; ?>
+                    </span>
+    
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="yorum-tarih"><?php echo date("d.m.Y H:i", strtotime($y['created_at'])); ?></span>
+        
+                        <?php if($aktif_kullanici_rolu == 'admin' || $aktif_kullanici_rolu == 'super_admin'): ?>
+                            <form action="yorum_sil.php" method="POST" onsubmit="return confirm('Bu yorumu silmek istediğinize emin misiniz?');">
+                                <input type="hidden" name="yorum_id" value="<?php echo $y['id']; ?>">
+                                <input type="hidden" name="movie_id" value="<?php echo $movie_id; ?>">
+                                <button type="submit" style="background:transparent; border:none; color:#e50914; cursor:pointer; font-weight:bold; font-size: 12px; text-decoration: underline;">Yorumu Sil</button>
+                            </form>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <!--<div class="yorum-baslik">
                         <span class="kullanici-adi">
                             <?php echo htmlspecialchars($y['username']); ?> 
                             <?php if($y['rol'] == 'admin') echo "<small style='color:#e50914;'>(Yönetici)</small>"; ?>
                         </span>
                         <span class="yorum-tarih"><?php echo date("d.m.Y H:i", strtotime($y['created_at'])); ?></span>
-                    </div>
+                    </div> -->
                     <p class="yorum-icerik"><?php echo nl2br(htmlspecialchars($y['comment_text'])); ?></p>
-                </div>
+            </div>
             <?php endforeach; ?>
         </div>
     </section>

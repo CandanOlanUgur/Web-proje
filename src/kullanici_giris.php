@@ -14,14 +14,14 @@ if (isset($_POST["giris_yap"])) {
     //Kullanici bulundumu sifre eslestimi
     if ($kullanici && password_verify($sifre, $kullanici["password_hash"])) {
         
-        if ($kullanici["role"] === "admin") {
+        if ($kullanici["rol"] === "admin") {
             header("Location: admin_giris.php");
             exit; // Yönlendirmeden sonra kodun devam etmesini engellemek zorundayız!
         }
 
         $_SESSION["kullanici_id"] = $kullanici["id"];
         $_SESSION['kullanici_adi'] = $kullanici['username'];
-        $_SESSION['kullanici_rolu'] = $kullanici['role'];
+        $_SESSION['kullanici_rolu'] = $kullanici['rol'];
         
         header("Location: index.php");
         exit;

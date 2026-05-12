@@ -22,7 +22,7 @@ if (isset($_POST['admin_giris'])) {
         //Admin oturumunu baslat
         $_SESSION['kullanici_id'] = $admin['id'];
         $_SESSION['kullanici_adi'] = $admin['username'];
-        $_SESSION['kullanici_rolu'] = $admin['role'];
+        $_SESSION['kullanici_rolu'] = $admin['rol'];
 
         header("Location: admin.php");
         exit;

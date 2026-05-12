@@ -19,11 +19,11 @@
             <div class = "header-container">
                 <nav>
                 <div class="nav-left">
-                    <a href="#" class="logo"><span>Film</span>Blog</a>
+                    <a href="index.php" class="logo"><span>Film</span>Blog</a>
 
                     <ul class="nav-menu">
                         <li><a href="diziler.php">Diziler</a></li>
-                        <li><a href="filmler.php">Filmler</a></li>
+                        <!--<li><a href="filmler.php">Filmler</a></li>   -->
                         <li><a href="#">Popüler</a></li>
                         <li class="dropdown">
                             <input type="checkbox" id="menu-ac-kapa">
@@ -67,10 +67,13 @@
                                 Hoş Geldin, <strong style ="color: #e50914;"><?php echo htmlspecialchars($_SESSION['kullanici_adi']); ?></strong>
                             </span>
                             
-                            <?php if ($_SESSION['kullanici_rolu'] === 'admin'): ?>
-                                <a href="admin.php" class="btn-giris">Panel</a>
+                            <?php 
+                                // Hem admin hem de super_admin girişini kabul et
+                                if (isset($_SESSION['kullanici_rolu']) && ($_SESSION['kullanici_rolu'] == 'admin' || $_SESSION['kullanici_rolu'] == 'super_admin')): 
+                            ?>
+                                <a href="admin_profil.php" class="btn-giris">Yönet</a>
                             <?php else: ?>
-                                <a href="profil.php" class="btn-giris">Profilim</a>
+                                <a href="profil.php" class="btn-giris">Hesabım</a>
                             <?php endif; ?>
                             
                             <a href="cikis.php" class="btn-kayit">Çıkış Yap</a>
