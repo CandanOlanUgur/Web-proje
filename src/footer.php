@@ -1,9 +1,28 @@
+<?php
+// Sayfalarda zaten db.php çağrıldığı için $db değişkenini kullanabiliriz.
+// Eğer bir hatadan dolayı bağlanamazsa diye varsayılan (default) değerler atıyoruz.
+$footer_hakkimizda = "En güncel film ve dizi incelemeleri, fragmanlar ve sinema dünyasından haberler.";
+$ig_link = "#";
+$tw_link = "#";
+
+if (isset($db)) {
+    $footerSorgu = $db->query("SELECT footer_about, instagram_link, twitter_link FROM site_settings WHERE id = 1");
+    $footerAyarlar = $footerSorgu->fetch(PDO::FETCH_ASSOC);
+    
+    if ($footerAyarlar) {
+        $footer_hakkimizda = $footerAyarlar['footer_about'];
+        $ig_link = $footerAyarlar['instagram_link'];
+        $tw_link = $footerAyarlar['twitter_link'];
+    }
+}
+?>
+
     <footer>
         <div class = "footer-container">
             <div class = "footer-row">
                 <div class = "footer-col">
                     <h3 class = "footer-logo">Film<span>Blog</span></h3>
-                    <p> En güncel film ve dizi incelemeleri, fragmanlar ve sinema dünyasından haberler. </p>
+                    <p> <?php echo htmlspecialchars($footer_hakkimizda); ?> </p>
                 </div>
             
                 <div class = "footer-col">
@@ -19,35 +38,18 @@
                 <div class = "footer-col">
                     <h4> Takip et</h4>
                     <div class = "social-links">
-                        <a href  = "#">Instagram</a>
-                        <a href = "#">Twitter / X </a>
-                        <a href = "#">Youtube</a>
+                        <a href="<?php echo htmlspecialchars($ig_link); ?>" target="_blank">Instagram</a>
+                        <a href="<?php echo htmlspecialchars($tw_link); ?>" target="_blank">Twitter / X </a>
                     </div>
                 </div>
             </div>            
 
             <div class = "footer-bottom">
-                <p>&copy; 2026 FilmBlog. Tüm hakları saklıdır.</p>
+                <p>&copy; <?php echo date("Y"); ?> FilmBlog. Tüm hakları saklıdır.</p>
             </div>
         </div>      
     </footer>        
 
-    
-
-
-    <!--<div id = "giris-popup" class = "popup-kapsayici">
-        <div class = "popup-kutusu">
-            <a href = "#!" class = "kapat-tusu">X</a>   
-
-            <h2> Giriş Yap </h2>
-            <form>
-                <input type = "text" placeholder = "Kullanıcı Adı">
-                <input type = "password" placeholder = "Şifre">
-                <button type = "submit">Giriş</button> 
-            </form>
-        </div>
-    </div> -->
-    
     <div id ="giris-popup" class = "popup-kapsayici">
         <div class = "popup-kutusu">
             <a href = "#!" class = "kapat-tusu">X</a>
@@ -90,16 +92,6 @@
             </form> 
         </div>
     </div>
-            <!--<h2> Kayit Ol</h2>
-            <form>
-                <input type = "text" placeholder = "E-Posta">
-                <input type="text" placeholder="Kullanıcı Adı">
-                <input type="password" placeholder="Şifre">
-                <input type="password" placeholder="Şifre Tekrar">
-                <button type="submit">Kayıt Ol</button>
-            </form>
-            -->
-    
     
 </body>
-</html>                
+</html>

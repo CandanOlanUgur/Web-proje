@@ -30,9 +30,9 @@
                 
                 <div class="film-akisi">
                     <div class="akis-baslik-kapsayici">
-                        <h2 class="baslik">Öne çıkan Yapımlar</h2>
+                        <h2 class="baslik">Tüm yapımlar</h2>
                         <div class="akis-filtre">
-                            <span class="aktif">Tümü</span>
+                            
                             <!-- Şimdilik sadece popüler filmleri çekiyoruz, dizi kısmı için ayrı API çağrısı gerekecek -->
                         </div>     
                     </div>

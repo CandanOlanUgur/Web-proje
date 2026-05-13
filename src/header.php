@@ -1,4 +1,10 @@
 <?php
+    // Veritabanından sekme başlığını çek
+    require_once 'db.php';
+    $ayarSorgu = $db->query("SELECT site_title FROM site_settings WHERE id = 1");
+    $siteAyarlari = $ayarSorgu->fetch(PDO::FETCH_ASSOC);
+    $sekme_basligi = $siteAyarlari ? $siteAyarlari['site_title'] : 'FilmBlog';
+    
     //oturum baslatilmadıysa baslat
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -10,7 +16,7 @@
     <head>
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
-        <title>FilmBlog</title>
+        <title><?php echo htmlspecialchars($sekme_basligi); ?></title>
         <link rel = "stylesheet" href = "style.css">
     </head>    
 
@@ -22,7 +28,6 @@
                     <a href="index.php" class="logo"><span>Film</span>Blog</a>
 
                     <ul class="nav-menu">
-                        <li><a href="diziler.php">Diziler</a></li>
                         <!--<li><a href="filmler.php">Filmler</a></li>   -->
                         <li><a href="#">Popüler</a></li>
                         <li class="dropdown">
@@ -56,7 +61,7 @@
                 
                 <div class="nav-right">
                     <form action="#" class="search-form">
-                        <input type="text" placeholder="Film veya Dizi Ara...">
+                        <input type="text" placeholder="Film Ara...">
                         <button type="submit">Ara</button>
                     </form> 
 
