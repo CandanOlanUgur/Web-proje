@@ -29,7 +29,7 @@
 
                     <ul class="nav-menu">
                         <!--<li><a href="filmler.php">Filmler</a></li>   -->
-                        <li><a href="#">Popüler</a></li>
+                        
                         <li class="dropdown">
                             <input type="checkbox" id="menu-ac-kapa">
 
