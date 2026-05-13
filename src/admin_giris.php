@@ -4,7 +4,7 @@ require 'db.php';
 
 //Zaten admin olarkak giris yapilmissa direkt admin paneline at
 if (isset($_SESSION['kullanici_rolu']) && $_SESSION['kullanici_rolu'] === 'admin') {
-    header("Location: admin.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -24,7 +24,7 @@ if (isset($_POST['admin_giris'])) {
         $_SESSION['kullanici_adi'] = $admin['username'];
         $_SESSION['kullanici_rolu'] = $admin['rol'];
 
-        header("Location: admin.php");
+        header("Location: index.php");
         exit;
     } else {
         $hata_mesaji = "Girmeye çalışırken hata meydana geldi, Daha sonra tekrar dene.";

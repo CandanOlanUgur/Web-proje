@@ -24,9 +24,15 @@
             // Gelen ID'leri güvenli bir string'e çevir (Örn: "5,8,12")
             $idler = implode(',', array_map('intval', $_POST['secili_kullanicilar']));
         
-            // Super_admin silinemez kuralını ekliyoruz
-            $topluSil = $db->query("DELETE FROM users WHERE id IN ($idler) AND rol != 'super_admin'");
-            $mesaj = "Seçili kullanıcılar başarıyla silindi.";
+            // 1. ÖNCE BAĞLI VERİLERİ (YETİM KALMAMASI İÇİN) TEMİZLE
+            $db->query("DELETE FROM comments WHERE user_id IN ($idler)");
+            $db->query("DELETE FROM favorites WHERE user_id IN ($idler)");
+            $db->query("DELETE FROM ratings WHERE user_id IN ($idler)");
+
+            // 2. EN SON KULLANICILARI SİL (Super_admin silinemez kuralı ile)
+            $db->query("DELETE FROM users WHERE id IN ($idler) AND rol != 'super_admin'");
+            
+            $mesaj = "Seçili kullanıcılar ve onlara ait tüm veriler başarıyla silindi.";
             $mesaj_tur = "success";
         } else {
             $mesaj = "Silmek için en az bir kullanıcı seçmelisiniz.";
@@ -55,7 +61,8 @@
         
         <div class="toolbar">
             <input type="text" id="aramaKutusu" class="arama-kutusu" placeholder="Kullanıcı Adı veya @E-posta ara...">
-            <button type="submit" name="toplu_sil" class="btn-toplu-sil">Seçilileri Sil</button>
+            <a href="admin_profil.php" class=btn-toplu-sil>Geri dön</a> 
+            <button type="submit" name="toplu_sil" class="btn-toplu-sil">Seçili Hesapları Sil</button>
         </div>
 
         <table class="admin-table">

@@ -58,15 +58,19 @@
 
         // 3. HESAP SİLME
         elseif ($_POST['islem'] == 'hesap_sil') {
+            // Önce kullanıcının bıraktığı tüm izleri (yorum, favori, puan) temizle
+            $db->prepare("DELETE FROM comments WHERE user_id = ?")->execute([$user_id]);
+            $db->prepare("DELETE FROM favorites WHERE user_id = ?")->execute([$user_id]);
+            $db->prepare("DELETE FROM ratings WHERE user_id = ?")->execute([$user_id]);
+
+            // İzler silindikten sonra ana kullanıcı kaydını sil
             $sil = $db->prepare("DELETE FROM users WHERE id = ?");
             if ($sil->execute([$user_id])) {
-                // Veritabanındaki Foreign Key (ON DELETE CASCADE) özelliği sayesinde,
-                // bu kullanıcının yaptığı tüm yorumlar ve favoriler de otomatik silinir.
                 session_destroy();
                 header("Location: index.php");
                 exit;
             }
-        }    
+        }  
     }
 
     // SAYFA YÜKLENİRKEN KULLANICI BİLGİLERİNİ GETİR

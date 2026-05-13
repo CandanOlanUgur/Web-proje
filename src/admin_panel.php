@@ -43,7 +43,7 @@
         </div>
 
         <div class="admin-content">
-            <h2 style="font-size: 28px; margin-bottom: 10px; color: #fff;">Hoş Geldin, <?php echo htmlspecialchars($kullanici['username']); ?>!</h2>
+            <h2 style="font-size: 28px; margin-bottom: 10px; color: #fff;">Yönetim Paneli</h2>
             <p style="color: #888; font-size: 15px;">FilmBlog yönetim paneline giriş yaptınız. Sistemin anlık istatistiklerini ve özet durumunu aşağıdan takip edebilirsiniz.</p>
 
             <div class="dashboard-widgets">
