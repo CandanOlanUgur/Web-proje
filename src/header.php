@@ -59,7 +59,7 @@
                 
                 <div class="nav-right">
                     <form action="arama.php" method="GET" class="search-form">
-                        <input type="text" placeholder="Film Ara..." required>
+                        <input type="text" name="q" placeholder="Film Ara..." required>
                         <button type="submit">Ara</button>
                     </form> 
 

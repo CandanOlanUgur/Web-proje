@@ -9,7 +9,7 @@ function populerFilmleriGetir($sayfa = 1) {
     global $tmdb_api_key; 
     
     // 1. Hedef URL'yi oluşturuyoruz
-    $url = "https://api.themoviedb.org/3/movie/popular?api_key=" . $tmdb_api_key . "&language=tr-TR&page=1" . $sayfa;
+    $url = "https://api.themoviedb.org/3/movie/popular?api_key=" . $tmdb_api_key . "&language=tr-TR&page=" . $sayfa;
 
     // 2. cURL sistemini başlat
     $ch = curl_init();
