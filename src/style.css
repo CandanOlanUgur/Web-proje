@@ -32,6 +32,18 @@ input, button{
     font-family: inherit;
 }
 
+.slider-container { position: relative; width: 100%; height: 500px; overflow: hidden; margin-bottom: 40px; background-color: #000; }
+.slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s ease-in-out; z-index: 1; }
+.slide.aktif { opacity: 1; z-index: 2; }
+.slide img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+.slide-content { position: absolute; bottom: 60px; left: 50px; max-width: 600px; z-index: 3; }
+.slide-content h2 { font-size: 42px; color: #fff; text-shadow: 2px 2px 5px #000; margin-bottom: 10px; line-height: 1.1; }
+.slide-content p { color: #ddd; font-size: 15px; text-shadow: 1px 1px 3px #000; margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; font-size: 30px; padding: 15px 20px; cursor: pointer; z-index: 10; transition: 0.3s; }
+.slider-btn:hover { background: #e50914; }
+.btn-prev { left: 0; border-radius: 0 8px 8px 0; }
+.btn-next { right: 0; border-radius: 8px 0 0 8px; }
+
 /*NAVBAR*/
 header{
     background-color: rgba(0,0,0,0.9);

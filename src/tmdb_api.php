@@ -52,6 +52,35 @@ function filmDetayGetir($id) {
     return json_decode($cevap, true);
 }
 
+function kategoriFilmleriGetir($genre_id, $sayfa=1) {
+    global $tmdb_api_key;
+    $url = "https://api.themoviedb.org/3/discover/movie?api_key=" . $tmdb_api_key . "&language=tr-TR&sort_by=popularity.desc&with_genres=" . $genre_id . "&page=" . $sayfa;
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $cevap = curl_exec($ch);
+    curl_close($ch);
+
+    return json_decode($cevap, true);
+}
+
+function filmAra($kelime, $sayfa = 1) {
+    global $tmdb_api_key;
+    // urlencode() fonksiyonu boşlukları ve Türkçe karakterleri URL formatına çevirir
+    $url = "https://api.themoviedb.org/3/search/movie?api_key=" . $tmdb_api_key . "&language=tr-TR&query=" . urlencode($kelime) . "&page=" . $sayfa;
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url); 
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $cevap = curl_exec($ch);
+    curl_close($ch);
+
+    return json_decode($cevap, true);
+}
+
 
 
 ?>

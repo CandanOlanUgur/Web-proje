@@ -38,30 +38,28 @@
                             </label>
 
                             <ul class="dropdown-menu">
-                                <li><a href="#">Aksiyon</a></li>
-                                <li><a href="#">Aile</a></li>
-                                <li><a href="#">Animasyon</a></li>
-                                <li><a href="#">Bilim Kurgu</a></li>
-                                <li><a href="#">Çizgi Film</a></li>
-                                <li><a href="#">Fantastik</a></li>
-                                <li><a href="#">Gizem</a></li>
-                                <li><a href="#">Korku</a></li>
-                                <li><a href="#">Komedi</a></li>
-                                <li><a href="#">Macera</a></li>
-                                <li><a href="#">Polisiye</a></li>
-                                <li><a href="#">Romantik</a></li>
-                                <li><a href="#">Western</a></li>
-                                <li><a href="#">Dram</a></li>
-                                <li><a href="#">Gerilim</a></li>
-                                <li><a href="#">Yerli</a></li>
+                                <li><a href="kategori.php?id=28&isim=Aksiyon">Aksiyon</a></li>
+                                <li><a href="kategori.php?id=10751&isim=Aile">Aile</a></li>
+                                <li><a href="kategori.php?id=16&isim=Animasyon">Animasyon</a></li>
+                                <li><a href="kategori.php?id=878&isim=Bilim Kurgu">Bilim Kurgu</a></li>
+                                <li><a href="kategori.php?id=14&isim=Fantastik">Fantastik</a></li>
+                                <li><a href="kategori.php?id=9648&isim=Gizem">Gizem</a></li>
+                                <li><a href="kategori.php?id=27&isim=Korku">Korku</a></li>
+                                <li><a href="kategori.php?id=35&isim=Komedi">Komedi</a></li>
+                                <li><a href="kategori.php?id=12&isim=Macera">Macera</a></li>
+                                <li><a href="kategori.php?id=80&isim=Polisiye">Polisiye (Suç)</a></li>
+                                <li><a href="kategori.php?id=10749&isim=Romantik">Romantik</a></li>
+                                <li><a href="kategori.php?id=37&isim=Western">Western</a></li>
+                                <li><a href="kategori.php?id=18&isim=Dram">Dram</a></li>
+                                <li><a href="kategori.php?id=53&isim=Gerilim">Gerilim</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="nav-right">
-                    <form action="#" class="search-form">
-                        <input type="text" placeholder="Film Ara...">
+                    <form action="arama.php" method="GET" class="search-form">
+                        <input type="text" placeholder="Film Ara..." required>
                         <button type="submit">Ara</button>
                     </form> 
 

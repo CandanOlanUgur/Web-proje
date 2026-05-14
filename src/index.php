@@ -21,7 +21,38 @@
 ?>
 
 <?php include 'header.php'; ?>
+
     <div class="container">
+
+        <div class="slider-container">
+            <?php foreach($vitrin_filmleri as $index => $film): ?>
+                <div class="slide <?php echo $index == 0 ? 'aktif' : ''; ?>">
+                    <img src="https://image.tmdb.org/t/p/original<?php echo $film['backdrop_path']; ?>" alt="Banner">
+                    <div class="slide-content">
+                        <h2><?php echo htmlspecialchars($film['title']); ?></h2>
+                        <p><?php echo htmlspecialchars($film['overview']); ?></p>
+                        <a href="film-detay.php?id=<?php echo $film['id']; ?>" style="background-color: #e50914; color: white; padding: 12px 30px; border-radius: 4px; font-weight: bold; font-size: 16px;">İncele ▶</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+    
+            <button class="slider-btn btn-prev" onclick="sliderDegistir(-1)">&#10094;</button>
+            <button class="slider-btn btn-next" onclick="sliderDegistir(1)">&#10095;</button>
+        </div>
+
+        <script>
+            let mevcutSlayt = 0;
+            const slaytlar = document.querySelectorAll('.slide');
+    
+            function sliderDegistir(yon) {
+                slaytlar[mevcutSlayt].classList.remove('aktif');
+                mevcutSlayt = (mevcutSlayt + yon + slaytlar.length) % slaytlar.length;
+                slaytlar[mevcutSlayt].classList.add('aktif');
+            }
+            // Otomatik geçiş (5 saniyede bir)
+            setInterval(() => sliderDegistir(1), 5000);
+        </script>
+
         <main class="content">
 
             <!-- ... ÖNE ÇIKAN FİLMLER BÖLÜMÜ ... -->
